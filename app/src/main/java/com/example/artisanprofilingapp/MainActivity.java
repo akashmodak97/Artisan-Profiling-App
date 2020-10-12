@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mediaPlayer = MediaPlayer.create(this,R.raw.phoneno);
-
+        mediaPlayer.start();
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             if (Build.VERSION.SDK_INT >= 23) {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                else{
-                   mediaPlayer.start();
+//                   mediaPlayer.start();
                }
             }
         }
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             //UNCOMMENT THIS
-                            mediaPlayer.stop();
+//                            mediaPlayer.stop();
                             startActivity(new Intent(MainActivity.this, NameActivity.class));
                         }
                         else{
@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     Log.d("Jhingalala", "granted");
-                    mediaPlayer.start();
+//                    mediaPlayer.start();
 
                     // do your work here
 

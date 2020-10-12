@@ -64,7 +64,7 @@ public class UpdateUserAuthActivity extends AppCompatActivity {
         nam = (EditText)findViewById(R.id.nam);
         ph = (EditText)findViewById(R.id.ph);
         submitbtn = (Button)findViewById(R.id.submitBtn);
-        mediaPlayer = MediaPlayer.create(this, R.raw.experienceinst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.nameandphoneinst);
         mediaPlayer.start();
 
         String state = Environment.getExternalStorageState();

@@ -34,6 +34,7 @@ public class ThankYouActivity extends AppCompatActivity {
                 public void onClick(View view) {
 //                ThankYouActivity.this.finish();
 //                System.exit(0);
+                    myPref.edit().putString("track","-17").apply();
                     mediaPlayer.stop();
                     finishAffinity();
                     System.exit(0);
@@ -43,6 +44,7 @@ public class ThankYouActivity extends AppCompatActivity {
             newentry.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    myPref.edit().putString("track","0").apply();
                     mediaPlayer.stop();
                     Intent i = new Intent(ThankYouActivity.this, UserTypeActivity.class);
                     startActivity(i);

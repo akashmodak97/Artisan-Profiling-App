@@ -73,6 +73,8 @@ public class EditProfilePicActivity extends AppCompatActivity {
         idToGet = myPref.getString("id","No data found");
         ImageCountToGet = myPref.getString("count","No data found");
         mediaPlayer = MediaPlayer.create(this, R.raw.profilepicinst);
+        mediaPlayer.start();
+
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             if (Build.VERSION.SDK_INT >= 23) {
@@ -82,7 +84,7 @@ public class EditProfilePicActivity extends AppCompatActivity {
                 }
             }
         }
-        //mediaPlayer.start();
+//        mediaPlayer.start();
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
@@ -90,7 +92,7 @@ public class EditProfilePicActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //mediaPlayer.start();
+//                mediaPlayer.start();
                 ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = con.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
@@ -351,7 +353,7 @@ public class EditProfilePicActivity extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     Log.d("Jhingalala", "granted");
-                    mediaPlayer.start();
+//                    mediaPlayer.start();
 
                     // do your work here
 

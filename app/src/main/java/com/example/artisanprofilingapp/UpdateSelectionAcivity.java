@@ -35,7 +35,7 @@ public class UpdateSelectionAcivity extends AppCompatActivity {
 //        artformVideo = findViewById(R.id.artformVideo);
 
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
-        mediaPlayer = MediaPlayer.create(this, R.raw.captureselectioninst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.whichdatachange);
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();

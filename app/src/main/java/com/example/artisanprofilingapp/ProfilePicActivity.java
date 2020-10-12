@@ -73,6 +73,8 @@ public class ProfilePicActivity extends AppCompatActivity {
         idToGet = myPref.getString("id","No data found");
         ImageCountToGet = myPref.getString("count","No data found");
         mediaPlayer = MediaPlayer.create(this, R.raw.profilepicinst);
+        mediaPlayer.start();
+
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             if (Build.VERSION.SDK_INT >= 23) {
@@ -82,7 +84,7 @@ public class ProfilePicActivity extends AppCompatActivity {
                 }
             }
         }
-        //mediaPlayer.start();
+//        mediaPlayer.start();
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
@@ -349,8 +351,8 @@ private void requestPermission() {
             case 666: // Allowed was selected so Permission granted
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Log.d("Jhingalala", "granted");
-                    mediaPlayer.start();
+//                    Log.d("Jhingalala", "granted");
+//                    mediaPlayer.start();
 
                     // do your work here
 

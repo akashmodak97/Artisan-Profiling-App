@@ -163,7 +163,7 @@
             android:id="@+id/nam5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/instt"
+            android:hint="কত বছর ধরে এই এলাকায় থাকছেন?"
             android:maxLength="200"
             android:inputType="number"
             />

@@ -41,7 +41,7 @@ public class EditExperienceActivity extends AppCompatActivity {
         exp = (TextInputLayout)findViewById(R.id.experi);
         nam = (EditText)findViewById(R.id.nam);//to show error msg
         submitbtn = (Button)findViewById(R.id.submitBtn);
-        mediaPlayer = MediaPlayer.create(this, R.raw.nameinst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.editexpinst);
         mediaPlayer.start();
 
         //Initialize of SharedPref
