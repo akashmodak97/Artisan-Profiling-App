@@ -21,6 +21,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,8 +35,19 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.hiteshsondhi88.libffmpeg.ExecuteBinaryResponseHandler;
+import com.github.hiteshsondhi88.libffmpeg.FFmpeg;
+import com.github.hiteshsondhi88.libffmpeg.LoadBinaryResponseHandler;
+import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegCommandAlreadyRunningException;
+import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegNotSupportedException;
+import com.iceteck.silicompressorr.SiliCompressor;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.security.PrivateKey;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +64,7 @@ public class CaptureVideoActivity extends AppCompatActivity {
     SharedPreferences myPref;
     private String dataToGet;
     private MediaPlayer mediaPlayer;
+private String outputVideoPath="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,12 +95,14 @@ public class CaptureVideoActivity extends AppCompatActivity {
             }
         });
     }
+
     private void captureVideo(){
         Intent i = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         if(i.resolveActivity(getPackageManager())!=null){
             if (!checkPermission()) {
                 requestPermission(); // Code for permission
             }
+
 //            getFileUri();
 //            i.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
             startActivityForResult(i,REQUEST_VIDEO_CAPTURE);
@@ -117,11 +132,86 @@ public class CaptureVideoActivity extends AppCompatActivity {
             uri = intent.getData();
             file = new File(getRealPathFromURI(uri));
             Log.d("hmm", file.toString());
+
+            String inputVideoPath = file.toString();
+            Log.d("doFileUpload ", inputVideoPath);
+//            FFmpeg ffmpeg = FFmpeg.getInstance(this);
+//            try {
+//                //Load the binary
+//                ffmpeg.loadBinary(new LoadBinaryResponseHandler() {
+//                    @Override
+//                    public void onStart() {
+//                    }
+//
+//                    @Override
+//                    public void onFailure() {
+//                    }
+//
+//                    @Override
+//                    public void onSuccess() {
+//                    }
+//
+//                    @Override
+//                    public void onFinish() {
+//
+//                    }
+//                });
+//            } catch (FFmpegNotSupportedException e) {
+//                // Handle if FFmpeg is not supported by device
+//            }
+//            try {
+//                // to execute "ffmpeg -version" command you just need to pass "-version"
+//                outputVideoPath = inputVideoPath;
+//                String[] commandArray = new String[]{};
+//                commandArray = new String[]{"-y","-i", inputVideoPath, outputVideoPath};
+////                $ ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4
+//                //final ProgressDialog dialog = new ProgressDialog(CaptureVideoActivity.this);
+//                ffmpeg.execute(commandArray, new ExecuteBinaryResponseHandler() {
+//                    @Override
+//                    public void onStart() {
+//                        Log.e("FFmpeg", "onStart");
+//                        //dialog.setMessage("Compressing... please wait");
+//                        //dialog.show();
+//                    }
+//                    @Override
+//                    public void onProgress(String message) {
+//                        Log.e("FFmpeg onProgress? ", message);
+//                    }
+//                    @Override
+//                    public void onFailure(String message) {
+//                        Log.e("FFmpeg onFailure? ", message);
+//                    }
+//                    @Override
+//                    public void onSuccess(String message) {
+//                        Log.e("FFmpeg onSuccess? ", message);
+//
+//                    }
+//                    @Override
+//                    public void onFinish() {
+//                        Log.e("FFmpeg", "onFinish");
+////                        if (dialog.isShowing())
+////                            dialog.dismiss();
+//////                        playVideoOnVideoView(Uri.parse(outputPath));
+//                        //isCompressed = true;
+//                        //count = count + 1;
+//                    }
+//                });
+//            } catch (FFmpegCommandAlreadyRunningException e) {
+//                e.printStackTrace();
+//                // Handle if FFmpeg is already running
+//            }
+
+//            try {
+//                outputVideoPath = SiliCompressor.with(getApplicationContext()).compressVideo(inputVideoPath,Environment.DIRECTORY_DCIM);
+//            } catch (URISyntaxException e) {
+//                e.printStackTrace();
+//            }
             uploadVideo();
             myPref.edit().putString("track", "14").apply();
 
         }
     }
+
 // bhai php file to filename thik asche... echo te to thik e dekhache  dara daraaccha
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(CaptureVideoActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -212,12 +302,12 @@ public class CaptureVideoActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                uploading = ProgressDialog.show(CaptureVideoActivity.this, "Uploading File", "Please wait...", false, false);
+                //uploading = ProgressDialog.show(CaptureVideoActivity.this, "Uploading File", "Please wait...", false, false);
             }
 
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                uploading.dismiss();
+//                uploading.dismiss();
                 Toast.makeText(CaptureVideoActivity.this, s, Toast.LENGTH_LONG).show();
 //                    textViewResponse.setText(Html.fromHtml("<b>Uploaded at <a href='" + s + "'>" + s + "</a></b>"));
 //                    textViewResponse.setMovementMethod(LinkMovementMethod.getInstance());
@@ -232,7 +322,15 @@ public class CaptureVideoActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... params) {
                 Upload u = new Upload();
+//                String filePath="";
+//                try {
+//                    filePath = SiliCompressor.with(getApplicationContext()).compressVideo(file.toString(), MediaStore.);
+//                    Log.d("hmm filepath", filePath);
+//                } catch (URISyntaxException e) {
+//                    e.printStackTrace();
+//                }
 
+//                String msg = u.upLoad2Server(file.toString(),dataToGet);
                 String msg = u.upLoad2Server(file.toString(),dataToGet);
                 return msg;
             }

@@ -194,7 +194,7 @@ public class ProfilePicActivity extends AppCompatActivity {
 
             myPref.edit().putString("track", "7").apply();
             mediaPlayer.stop();
-            Intent i=new Intent(ProfilePicActivity.this,ArtformActivity.class);
+            Intent i=new Intent(ProfilePicActivity.this, ArtformActivity.class);
             startActivity(i);
         }
     }
@@ -241,62 +241,8 @@ public class ProfilePicActivity extends AppCompatActivity {
         }
     }
 
-//    private boolean checkPermission() {
-//        // int result = ContextCompat.checkSelfPermission(CaptureImageActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-//        int result2 = ContextCompat.checkSelfPermission(ProfilePicActivity.this, Manifest.permission.CAMERA);
-//        if (/*result == PackageManager.PERMISSION_GRANTED && */result2 == PackageManager.PERMISSION_GRANTED) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-//
-//    private void requestPermission() {
-//        int i=0;
-////        if (ActivityCompat.shouldShowRequestPermissionRationale(CaptureImageActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-////           i=1;
-////            Toast.makeText(CaptureImageActivity.this, "Write External Storage permission allows us to save files. Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
-////        }
-//        if(ActivityCompat.shouldShowRequestPermissionRationale(ProfilePicActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-//            i=2;
-//            Toast.makeText(ProfilePicActivity.this, "Camera permission allows us to Click Pictures. Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
-//        }
-//
-//
-//        else {
-//            i=3;
-//            //ActivityCompat.requestPermissions(CaptureImageActivity.this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-//            ActivityCompat.requestPermissions(ProfilePicActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-//        }
-//        Log.d("check",Integer.toString(i));
-//    }
-//
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-//        switch (requestCode) {
-//            case PERMISSION_REQUEST_CODE:
-//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    Log.e("value", "Permission Granted, Now you can use local drive .");
-//                } else {
-//                    Log.e("value", "Permission Denied, You cannot use local drive .");
-//                }
-//                break;
-//        }
-//    }
 private void requestPermission() {
     int i=0;
-//        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-//            i=1;
-//            Toast.makeText(this, "Camera permission allows us to click images. Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
-//        }
-//
-//
-//
-//        else {
-//            i=3;
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-//
-//        }
 
     if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE))
     {
