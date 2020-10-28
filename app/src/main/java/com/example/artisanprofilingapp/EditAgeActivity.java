@@ -98,7 +98,7 @@ public class EditAgeActivity extends AppCompatActivity {
                 AgeHolder = AgeHolder.replaceAll(characterFilter,"");
 
                 //String myurl = "http://192.168.43.12/Artisans-Profiling/name.php?name=" + NameHolder +"&phoneno="+ dataToGet;
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/updateAge.php?id=" + dataToGet +"&age="+ AgeHolder;
+                String myurl = "https://artisanapp.xyz/updateAge.php?id=" + dataToGet +"&age="+ AgeHolder;
                 Log.d("myurl eirki", "regUser: "+myurl);
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, myurl,

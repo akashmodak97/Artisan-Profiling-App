@@ -99,7 +99,7 @@ public class EditNameActivity extends AppCompatActivity {
                 NameHolder = NameHolder.replaceAll(characterFilter,"");
 
                 //String myurl = "http://192.168.43.12/Artisans-Profiling/name.php?name=" + NameHolder +"&phoneno="+ dataToGet;
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/updateName.php?id=" + dataToGet +"&name="+ NameHolder;
+                String myurl = "https://artisanapp.xyz/updateName.php?id=" + dataToGet +"&name="+ NameHolder;
                 Log.d("myurl eirki", "regUser: "+myurl);
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, myurl,

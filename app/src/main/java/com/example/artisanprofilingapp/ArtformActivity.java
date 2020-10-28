@@ -99,7 +99,7 @@ public class ArtformActivity extends AppCompatActivity implements AdapterView.On
 
     private void getData() {
 //        String url ="http://192.168.43.12/Artisans-Profiling/artform.php";
-        String url ="https://artisanprofilingapp.000webhostapp.com/artform.php";
+        String url ="https://artisanapp.xyz/artform.php";
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override

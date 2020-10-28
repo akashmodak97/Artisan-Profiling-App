@@ -204,7 +204,7 @@ public class ProfilePicActivity extends AppCompatActivity {
 
 //        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.43.12/Artisans-Profiling/profilepic.php",
 
-        StringRequest request = new StringRequest(Request.Method.POST, "https://artisanprofilingapp.000webhostapp.com/profilepic.php",
+        StringRequest request = new StringRequest(Request.Method.POST, "https://artisanapp.xyz/profilepic.php",
 
 
                 new Response.Listener<String>() {

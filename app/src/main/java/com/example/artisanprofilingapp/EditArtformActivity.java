@@ -96,7 +96,7 @@ public class EditArtformActivity extends AppCompatActivity implements AdapterVie
 
     private void getData() {
 //        String url ="http://192.168.43.12/Artisans-Profiling/artform.php";
-        String url ="https://artisanprofilingapp.000webhostapp.com/UpdateArtform.php";
+        String url ="https://artisanapp.xyz/UpdateArtform.php";
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override

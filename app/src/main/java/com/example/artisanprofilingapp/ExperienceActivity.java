@@ -132,7 +132,7 @@ public class ExperienceActivity extends AppCompatActivity {
 //                        +"&orgmember="+ yesOrNo +"&id="+idToGet;
 
 //                Log.d("eirki myurl", myurl);
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/experience.php?exp=" + ExperienceHolder
+                String myurl = "https://artisanapp.xyz/experience.php?exp=" + ExperienceHolder
                         +"&orgmember="+ yesOrNo +"&id="+idToGet;
 
 

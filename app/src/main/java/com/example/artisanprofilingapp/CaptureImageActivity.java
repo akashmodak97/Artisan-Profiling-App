@@ -70,7 +70,7 @@ public class CaptureImageActivity extends AppCompatActivity {
         dataToGet = myPref.getString("phone","No data found");
         idToGet = myPref.getString("id","No Data found");
         ImageCountToGet = myPref.getString("count","No data found");
-        mediaPlayer = MediaPlayer.create(this, R.raw.captureimageinst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.captureimage1);
         mediaPlayer.start();
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -113,7 +113,7 @@ public class CaptureImageActivity extends AppCompatActivity {
 
     private void getFileUri() {
         //img_type = "yes";
-        image_name = "_"+ dataToGet + ".jpg";
+        image_name = "_1_"+ dataToGet + ".jpg";
         //img_type = ".jpg";
         file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
                 + File.separator + count + image_name
@@ -186,7 +186,7 @@ public class CaptureImageActivity extends AppCompatActivity {
 
             myPref.edit().putString("track", "11").apply();
             mediaPlayer.stop();
-            Intent i=new Intent(CaptureImageActivity.this,UserChoiceActivity.class);
+            Intent i=new Intent(CaptureImageActivity.this,CaptureImageActivity2.class);
             startActivity(i);
         }
     }
@@ -196,7 +196,7 @@ public class CaptureImageActivity extends AppCompatActivity {
 
 //        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.43.12/Artisans-Profiling/imageupload.php",
 
-StringRequest request = new StringRequest(Request.Method.POST, "https://artisanprofilingapp.000webhostapp.com/imageupload.php",
+StringRequest request = new StringRequest(Request.Method.POST, "https://artisanapp.xyz/imageupload.php",
 
                 new Response.Listener<String>() {
                     @Override

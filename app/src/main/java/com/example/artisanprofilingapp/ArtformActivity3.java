@@ -126,7 +126,7 @@ public class ArtformActivity3 extends AppCompatActivity {
 //                String myurl = "http://192.168.43.12/Artisans-Profiling/artformextras.php?artlearned=" + artlearnedToGet
 //                        +"&hascoworker="+ yesOrNo +"&noofcoworker="+NOofCoWorkersHolder+"&id="+idToGet+"&artform="+artformToGet;
 
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/artformextras.php?artlearned=" + artlearnedToGet
+                String myurl = "https://artisanapp.xyz/artformextras.php?artlearned=" + artlearnedToGet
                         +"&hascoworker="+ yesOrNo +"&noofcoworker="+NOofCoWorkersHolder+"&id="+idToGet+"&artform="+artformToGet;
 
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
@@ -285,7 +285,7 @@ public class ArtformActivity3 extends AppCompatActivity {
 //                String myurl = "http://192.168.43.12/Artisans-Profiling/artformextras.php?artlearned=" + artlearnedToGet
 //                        +"&hascoworker="+ yesOrNo +"&noofcoworker="+NOofCoWorkersHolder+"&id="+idToGet+"&artform="+artformToGet;
 
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/artformextras.php?artlearned=" + artlearnedToGet
+                String myurl = "https://artisanapp.xyz/artformextras.php?artlearned=" + artlearnedToGet
                         +"&hascoworker="+ yesOrNo +"&noofcoworker="+NOofCoWorkersHolder+"&id="+idToGet+"&artform="+artformToGet;
 
                 Log.d("eirki myurl", myurl);

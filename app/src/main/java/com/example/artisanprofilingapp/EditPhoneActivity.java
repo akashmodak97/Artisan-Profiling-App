@@ -185,10 +185,10 @@ public class EditPhoneActivity extends AppCompatActivity {
         String characterFilter = "[^\\p{L}\\p{M}\\p{N}\\p{P}\\p{Z}\\p{Cf}\\p{Cs}\\s]";
         PhoneNoHolder = PhoneNoHolder.replaceAll(characterFilter,"");
 
-        String myurl = "https://artisanprofilingapp.000webhostapp.com/updatePhone.php?id="+idToGet+ "&phone=" + PhoneNoHolder;
+        String myurl = "https://artisanapp.xyz/updatePhone.php?id="+idToGet+ "&phone=" + PhoneNoHolder;
 //                String myurl = "http://192.168.43.12/Artisans-Profiling/phoneno.php?phoneno=" + PhoneNoHolder;
 
-//String myurl = "https://artisanprofilingapp.000webhostapp.com/phoneno.php?phoneno=" + PhoneNoHolder;
+//String myurl = "https://artisanapp.xyz/phoneno.php?phoneno=" + PhoneNoHolder;
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, myurl,

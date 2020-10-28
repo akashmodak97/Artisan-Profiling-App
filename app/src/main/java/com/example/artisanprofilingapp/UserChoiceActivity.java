@@ -25,7 +25,7 @@ public class UserChoiceActivity extends AppCompatActivity {
         yes = (Button) findViewById(R.id.yesBtn);
         no = (Button) findViewById(R.id.noBtn);
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
-        mediaPlayer = MediaPlayer.create(this, R.raw.userchoiceinst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.userchoiceforclickingmorepictures);
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();

@@ -185,7 +185,7 @@ public class EditAddressActivity extends AppCompatActivity {
 //                        +"&addressLine2="+ AddressHolder3 +"&pinCode="+ AddressHolder4 +"&landMark="+ AddressHolder5
 //                        +"&id="+ idToGet+ "&addressExp="+ AddressExpHolder + "&age="+ ageToGet;
 
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/updateAddress.php?district="
+                String myurl = "https://artisanapp.xyz/updateAddress.php?district="
                         + AddressHolder1 +"&addressLine1="+ AddressHolder2
                         +"&addressLine2="+ AddressHolder3 +"&pinCode="+ AddressHolder4 +"&landMark="+ AddressHolder5 + "&id=" + idToGet;
 

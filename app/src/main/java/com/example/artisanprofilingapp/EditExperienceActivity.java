@@ -98,7 +98,7 @@ public class EditExperienceActivity extends AppCompatActivity {
                 ExpHolder = ExpHolder.replaceAll(characterFilter,"");
 
                 //String myurl = "http://192.168.43.12/Artisans-Profiling/name.php?name=" + NameHolder +"&phoneno="+ dataToGet;
-                String myurl = "https://artisanprofilingapp.000webhostapp.com/updateExperience.php?id=" + dataToGet +"&exp="+ ExpHolder;
+                String myurl = "https://artisanapp.xyz/updateExperience.php?id=" + dataToGet +"&exp="+ ExpHolder;
                 Log.d("myurl eirki", "regUser: "+myurl);
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, myurl,

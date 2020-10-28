@@ -149,11 +149,11 @@ public class UpdateUserAuthActivity extends AppCompatActivity {
         PhoneNoHolder = PhoneNoHolder.replaceAll(characterFilter,"");
         NameHolder = NameHolder.replaceAll(characterFilter,"");
 
-        String myurl = "https://artisanprofilingapp.000webhostapp.com/checkUser.php?phone=" + PhoneNoHolder +
+        String myurl = "https://artisanapp.xyz/checkUser.php?phone=" + PhoneNoHolder +
                 "&name="+ NameHolder;
 //                String myurl = "http://192.168.43.12/Artisans-Profiling/phoneno.php?phoneno=" + PhoneNoHolder;
 
-//String myurl = "https://artisanprofilingapp.000webhostapp.com/phoneno.php?phoneno=" + PhoneNoHolder;
+//String myurl = "https://artisanapp.xyz/phoneno.php?phoneno=" + PhoneNoHolder;
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         Log.d("eirki json", myurl);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, myurl,

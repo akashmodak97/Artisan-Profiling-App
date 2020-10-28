@@ -70,6 +70,7 @@ private String outputVideoPath="";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_video);
         capture = findViewById(R.id.capture);
+
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         dataToGet = myPref.getString("id","No data found");
         Log.d("hiii", "onCreate: "+dataToGet);

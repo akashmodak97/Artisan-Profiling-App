@@ -33,6 +33,19 @@
             android:layout_marginTop="120dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="আপনি এইবার কমপক্ষে ৪টে ছবি তুলবেন\n\n
+১. দূরের থেকে পুরো পণ্যের ছবি তুলুন"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:textColor="@color/textColor"
+            />
+
+        <TextView
+            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/ClickImage"
             android:textSize="30sp"
             android:layout_gravity="center"
@@ -44,7 +57,7 @@
             android:id="@+id/start"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center"
 
             android:background="@drawable/ic_baseline_photo_camera_24"
