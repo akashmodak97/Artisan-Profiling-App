@@ -181,7 +181,7 @@ public class CaptureImageActivity2 extends AppCompatActivity {
             makeRequest();
             Toast.makeText(CaptureImageActivity2.this, "picture submitted successfully!", Toast.LENGTH_LONG).show();
 
-            myPref.edit().putString("track", "11").apply();
+            myPref.edit().putString("track", "12").apply();
             mediaPlayer.stop();
             Intent i=new Intent(CaptureImageActivity2.this,CaptureImageActivity3.class);
             startActivity(i);

@@ -200,7 +200,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="ব্লাউজ পিএস"
+                android:text="ব্লাউজ পিস্"
                 android:textSize="30sp"
                 android:padding="10dp"
                 android:background="@drawable/btn_round"

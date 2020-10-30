@@ -221,7 +221,7 @@ public class CaptureArtformVideoActivity extends AppCompatActivity {
 //                    textViewResponse.setText(Html.fromHtml("<b>Uploaded at <a href='" + s + "'>" + s + "</a></b>"));
 //                    textViewResponse.setMovementMethod(LinkMovementMethod.getInstance());
                 mediaPlayer.stop();
-                myPref.edit().putString("track", "16").apply();
+//                myPref.edit().putString("track", "16").apply();
                 Intent i=new Intent(CaptureArtformVideoActivity.this,ThankYouActivity.class);
                 startActivity(i);
             }

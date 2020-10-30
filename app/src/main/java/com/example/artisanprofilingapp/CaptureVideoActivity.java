@@ -208,7 +208,7 @@ private String outputVideoPath="";
 //                e.printStackTrace();
 //            }
             uploadVideo();
-            myPref.edit().putString("track", "14").apply();
+//            myPref.edit().putString("track", "14").apply();
 
         }
     }

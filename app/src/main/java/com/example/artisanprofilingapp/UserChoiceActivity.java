@@ -43,9 +43,9 @@ public class UserChoiceActivity extends AppCompatActivity {
             no.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    myPref.edit().putString("track", "12").apply();
+                    myPref.edit().putString("track", "18").apply();
                     mediaPlayer.stop();
-                    Intent i = new Intent(UserChoiceActivity.this, DirectionToCaptureVideoActivity.class);
+                    Intent i = new Intent(UserChoiceActivity.this, ThankYouActivity.class);
                     startActivity(i);
                 }
             });

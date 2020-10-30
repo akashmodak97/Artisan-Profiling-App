@@ -95,27 +95,55 @@ public class SplashScreen extends AppCompatActivity {
                                 startActivity(i);
                                 break;
                             case "12":
-                                i = new Intent(SplashScreen.this, UserChoiceActivity.class);
+                                i = new Intent(SplashScreen.this, CaptureImageActivity2.class);
                                 startActivity(i);
                                 break;
                             case "13":
-                                i = new Intent(SplashScreen.this, Insert_video_instructionActivity.class);
+                                i = new Intent(SplashScreen.this, CaptureImageActivity3.class);
                                 startActivity(i);
                                 break;
                             case "14":
-                                i = new Intent(SplashScreen.this, CaptureVideoActivity.class);
+                                i = new Intent(SplashScreen.this, CaptureImageActivity4.class);
                                 startActivity(i);
                                 break;
                             case "15":
-                                i = new Intent(SplashScreen.this, Insert_Artfrom_video_instructionActivity.class);
+                                i = new Intent(SplashScreen.this, ProductSelectionActivity.class);
                                 startActivity(i);
                                 break;
-                            case "16":
-                                i = new Intent(SplashScreen.this, CaptureArtformVideoActivity.class);
-                                startActivity(i);
-                                break;
+//                            case "16":
+//                                i = new Intent(SplashScreen.this, .class);
+//                                startActivity(i);
+//                                break;
                             case "17":
+                                i = new Intent(SplashScreen.this, AudioActivity.class);
+                                startActivity(i);
+                                break;
+                            case "18":
+                                i = new Intent(SplashScreen.this, UserChoiceActivity.class);
+                                startActivity(i);
+                                break;
+//                            case "13":
+//                                i = new Intent(SplashScreen.this, Insert_video_instructionActivity.class);
+//                                startActivity(i);
+//                                break;
+//                            case "14":
+//                                i = new Intent(SplashScreen.this, CaptureVideoActivity.class);
+//                                startActivity(i);
+//                                break;
+//                            case "15":
+//                                i = new Intent(SplashScreen.this, Insert_Artfrom_video_instructionActivity.class);
+//                                startActivity(i);
+//                                break;
+//                            case "16":
+//                                i = new Intent(SplashScreen.this, CaptureArtformVideoActivity.class);
+//                                startActivity(i);
+//                                break;
+                            case "19":
                                 i = new Intent(SplashScreen.this, ThankYouActivity.class);
+                                startActivity(i);
+                                break;
+                            default:
+                                i = new Intent(SplashScreen.this, UserTypeActivity.class);
                                 startActivity(i);
                                 break;
                         }

@@ -101,7 +101,7 @@ public class EditArtformActivity extends AppCompatActivity implements AdapterVie
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                myPref.edit().putString("track", "5").apply();
+//                myPref.edit().putString("track", "5").apply();
                 showJSON(response);
             }
         },

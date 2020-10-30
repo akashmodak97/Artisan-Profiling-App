@@ -1,11 +1,29 @@
 ----SharedPreference Identity----
 
+UserTypeActivity: 0
 MainActivity: 1
 NameActivity: 2
-AddressActivity: 3
-ArtFromActivity: 4
-ExperienceActivity: 5
-Insert_image_instructionActivity: 6
-CaptureImageActivity: 7
-Insert_video_instructionActivity: 8
-CaptureVideoActivity: 9
+AgeActivity: 3
+AddressActivity: 4
+ArtFromActivity: 5
+ArtFromActivity2: 6
+ArtFromActivity3: 7
+ExperienceActivity: 8
+ImageCaptureSelectionActivity: 9
+Insert_image_instructionActivity: 10
+
+CaptureImageActivity1: 11
+CaptureImageActivity2: 12
+CaptureImageActivity3: 13
+CaptureImageActivity4: 14
+
+ProductSelectionActivity: 15
+FormActivites: 16//excluded
+AudioActivities: 17
+
+UserChoiceActivity: 18
+//Insert_video_instructionActivity: 13
+//CaptureVideoActivity: 14
+//Insert_artform_video_instructionActivity: 15
+//CaptureArtformVideoActivity: 16
+ThankYouActivity: 19 -- 0

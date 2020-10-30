@@ -25,7 +25,7 @@ public class ThankYouActivity extends AppCompatActivity {
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.thankyouinst);
         mediaPlayer.start();
-        myPref.edit().putString("track","17").apply();
+        myPref.edit().putString("track","19").apply();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
@@ -34,7 +34,7 @@ public class ThankYouActivity extends AppCompatActivity {
                 public void onClick(View view) {
 //                ThankYouActivity.this.finish();
 //                System.exit(0);
-                    myPref.edit().putString("track","-17").apply();
+                    myPref.edit().putString("track","0").apply();
                     mediaPlayer.stop();
                     finishAffinity();
                     System.exit(0);
@@ -61,10 +61,12 @@ public class ThankYouActivity extends AppCompatActivity {
     public void onBackPressed() {
         mediaPlayer.stop();
         super.onBackPressed();
+        myPref.edit().putString("track","0").apply();
     }
     @Override
     public void onUserLeaveHint(){
         mediaPlayer.stop();
         super.onUserLeaveHint();
+        myPref.edit().putString("track","0").apply();
     }
 }
