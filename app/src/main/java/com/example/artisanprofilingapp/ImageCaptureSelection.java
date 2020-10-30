@@ -13,19 +13,21 @@ import android.view.View;
 import android.widget.Button;
 
 public class ImageCaptureSelection extends AppCompatActivity {
-    Button saree, kurtya, tshirt, showpiece, bag, goina;
+    Button saree, kurtya, tshirt, showpiece, bag, goina, other;
     private SharedPreferences myPref;
     private MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_capture_selection);
+
         saree = findViewById(R.id.saree);
         kurtya = findViewById(R.id.kurta);
         tshirt = findViewById(R.id.tshirt);
         showpiece = findViewById(R.id.showPiece);
         bag = findViewById(R.id.bag);
         goina = findViewById(R.id.goina);
+        other = findViewById(R.id.others);
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.captureselectioninst);
         mediaPlayer.start();
@@ -84,6 +86,16 @@ public class ImageCaptureSelection extends AppCompatActivity {
                     myPref.edit().putString("track", "9").apply();
                     mediaPlayer.stop();
                     startActivity(new Intent(getApplicationContext(), Insert_image_instructionActivity.class));
+                }
+            });
+
+            other.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myPref.edit().putString("selected", "other").apply();
+                    //myPref.edit().putString("track", "9").apply();//kora hoini.. pore korbo
+                    mediaPlayer.stop();
+                    startActivity(new Intent(getApplicationContext(), CaptureImageActivity.class));
                 }
             });
 
