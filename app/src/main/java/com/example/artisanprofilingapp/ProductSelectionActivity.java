@@ -40,7 +40,7 @@ public class ProductSelectionActivity extends AppCompatActivity {
         handkerchief = findViewById(R.id.handkerchief);
 
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
-        mediaPlayer = MediaPlayer.create(this, R.raw.captureselectioninst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.selectproductinst);
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();

@@ -35,7 +35,7 @@ public class UserChoiceActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     mediaPlayer.stop();
-                    Intent i = new Intent(UserChoiceActivity.this, CaptureImageActivity.class);
+                    Intent i = new Intent(UserChoiceActivity.this, ImageCaptureSelection.class);
                     startActivity(i);
                 }
             });
@@ -45,7 +45,7 @@ public class UserChoiceActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     myPref.edit().putString("track", "18").apply();
                     mediaPlayer.stop();
-                    Intent i = new Intent(UserChoiceActivity.this, ThankYouActivity.class);
+                    Intent i = new Intent(UserChoiceActivity.this, FetchingDataActivity.class);
                     startActivity(i);
                 }
             });

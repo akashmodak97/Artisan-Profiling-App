@@ -34,7 +34,7 @@
             android:layout_marginTop="80dp"
             android:paddingStart="80dp"
             android:paddingEnd="40dp"
-            android:text="@string/more_pictures"
+            android:text="আপনি কি অন্য কোনো পণ্যের ছবি তুলতে চান? "
             android:textColor="@color/textColor"
             android:textSize="30sp" />
 

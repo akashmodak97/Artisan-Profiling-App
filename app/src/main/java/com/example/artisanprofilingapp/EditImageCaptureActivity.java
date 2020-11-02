@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class EditImageCaptureActivity extends AppCompatActivity {
-    Button saree, kurtya, tshirt, showpiece, bag, goina;
+    Button saree, kurtya, tshirt, showpiece, bag, goina, other;
     private SharedPreferences myPref;
     private MediaPlayer mediaPlayer;
     @Override
@@ -27,6 +27,7 @@ public class EditImageCaptureActivity extends AppCompatActivity {
         showpiece = findViewById(R.id.showPiece);
         bag = findViewById(R.id.bag);
         goina = findViewById(R.id.goina);
+        other = findViewById(R.id.others);
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.captureselectioninst);
         mediaPlayer.start();
@@ -85,6 +86,16 @@ public class EditImageCaptureActivity extends AppCompatActivity {
 //                    myPref.edit().putString("track", "9").apply();
                     mediaPlayer.stop();
                     startActivity(new Intent(getApplicationContext(), EditInsert_image_instructionActivity.class));
+                }
+            });
+
+            other.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myPref.edit().putString("selected", "other").apply();
+                    //myPref.edit().putString("track", "9").apply();//kora hoini.. pore korbo
+                    mediaPlayer.stop();
+                    startActivity(new Intent(getApplicationContext(), EditImageCaptureActivity.class));
                 }
             });
 

@@ -233,7 +233,7 @@ public class EditPhoneActivity extends AppCompatActivity {
 //                String date = jo.getString(Config5.KEY_DATE);
 //                String data = jo.getString(Config5.KEY_DATA);
             String id = jo.getString(Config.KEY_ID);
-            Log.d("eirki",id);
+//            Log.d("eirki",id);
             myPref.edit().putString("id",id).apply();
 
 

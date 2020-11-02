@@ -49,64 +49,65 @@ public class SplashScreen extends AppCompatActivity {
                         switch (s) {
                             case "0":
                                 startActivity(new Intent(SplashScreen.this, UserTypeActivity.class));
+//                                startActivity(new Intent(SplashScreen.this, FetchingDataActivity.class));
                                 break;
+//                            case "1":
+//                                i = new Intent(SplashScreen.this, MainActivity.class);
+//                                startActivity(i);
+//                                break;
                             case "1":
-                                i = new Intent(SplashScreen.this, MainActivity.class);
-                                startActivity(i);
-                                break;
-                            case "2":
                                 i = new Intent(SplashScreen.this, NameActivity.class);
                                 startActivity(i);
                                 break;
-                            case "3":
+                            case "2":
                                 i = new Intent(SplashScreen.this, AgeActivity.class);
                                 startActivity(i);
                                 break;
-                            case "4":
+                            case "3":
                                 i = new Intent(SplashScreen.this, AddressActivity.class);
                                 startActivity(i);
                                 break;
-                            case "5":
+                            case "4":
                                 i = new Intent(SplashScreen.this, ArtformActivity.class);
                                 startActivity(i);
                                 break;
-                            case "6":
+                            case "5":
                                 i = new Intent(SplashScreen.this, ArtformActivity2.class);
                                 startActivity(i);
                                 break;
-                            case "7":
+                            case "6":
                                 i = new Intent(SplashScreen.this, ArtformActivity3.class);
                                 startActivity(i);
                                 break;
-                            case "8":
+                            case "7":
                                 i = new Intent(SplashScreen.this, ExperienceActivity.class);
                                 startActivity(i);
                                 break;
-                            case "9":
+                            case "8":
                                 i = new Intent(SplashScreen.this, ImageCaptureSelection.class);
                                 startActivity(i);
                                 break;
-                            case "10":
+                            case "9":
                                 i = new Intent(SplashScreen.this, Insert_image_instructionActivity.class);
                                 startActivity(i);
                                 break;
-                            case "11":
+                            case "10":
                                 i = new Intent(SplashScreen.this, CaptureImageActivity.class);
                                 startActivity(i);
                                 break;
-                            case "12":
+                            case "11":
                                 i = new Intent(SplashScreen.this, CaptureImageActivity2.class);
                                 startActivity(i);
                                 break;
-                            case "13":
+                            case "12":
                                 i = new Intent(SplashScreen.this, CaptureImageActivity3.class);
                                 startActivity(i);
                                 break;
-                            case "14":
+                            case "13":
                                 i = new Intent(SplashScreen.this, CaptureImageActivity4.class);
                                 startActivity(i);
                                 break;
-                            case "15":
+                            case "14":
                                 i = new Intent(SplashScreen.this, ProductSelectionActivity.class);
                                 startActivity(i);
                                 break;
@@ -114,11 +115,11 @@ public class SplashScreen extends AppCompatActivity {
 //                                i = new Intent(SplashScreen.this, .class);
 //                                startActivity(i);
 //                                break;
-                            case "17":
+                            case "16":
                                 i = new Intent(SplashScreen.this, AudioActivity.class);
                                 startActivity(i);
                                 break;
-                            case "18":
+                            case "17":
                                 i = new Intent(SplashScreen.this, UserChoiceActivity.class);
                                 startActivity(i);
                                 break;
@@ -138,7 +139,7 @@ public class SplashScreen extends AppCompatActivity {
 //                                i = new Intent(SplashScreen.this, CaptureArtformVideoActivity.class);
 //                                startActivity(i);
 //                                break;
-                            case "19":
+                            case "18":
                                 i = new Intent(SplashScreen.this, ThankYouActivity.class);
                                 startActivity(i);
                                 break;

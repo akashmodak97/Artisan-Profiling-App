@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -67,7 +68,7 @@ public class EditCaptureImageActivity extends AppCompatActivity {
         dataToGet = myPref.getString("phone","No data found");
         idToGet = myPref.getString("id","No Data found");
         ImageCountToGet = myPref.getString("count","No data found");
-        mediaPlayer = MediaPlayer.create(this, R.raw.captureimageinst);
+        mediaPlayer = MediaPlayer.create(this, R.raw.captureimage1);
         mediaPlayer.start();
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -110,7 +111,7 @@ public class EditCaptureImageActivity extends AppCompatActivity {
 
     private void getFileUri() {
         //img_type = "yes";
-        image_name = "_"+ dataToGet + ".jpg";
+        image_name = "_1_"+ dataToGet + ".jpg";
         //img_type = ".jpg";
         file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
                 + File.separator + count + image_name
@@ -181,9 +182,9 @@ public class EditCaptureImageActivity extends AppCompatActivity {
             makeRequest();
             Toast.makeText(EditCaptureImageActivity.this, "picture submitted successfully!", Toast.LENGTH_LONG).show();
 
-//            myPref.edit().putString("track", "11").apply();
+            myPref.edit().putString("track", "11").apply();
             mediaPlayer.stop();
-            Intent i=new Intent(EditCaptureImageActivity.this,EditUserChoiceActivity.class);
+            Intent i=new Intent(EditCaptureImageActivity.this,EditCaptureImageActivity2.class);
             startActivity(i);
         }
     }
@@ -211,13 +212,14 @@ public class EditCaptureImageActivity extends AppCompatActivity {
                 HashMap<String,String> map = new HashMap<>();
                 map.put("encoded_string",encoded_string);
                 map.put("image_name",count+image_name);
-                Log.d("eirki id-->", count+image_name);
+                Log.d("eirki id-->", idToGet);
                 map.put("id",idToGet);
 
 
                 return map;
             }
         };
+        request.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS*2,0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(request);
     }
 
