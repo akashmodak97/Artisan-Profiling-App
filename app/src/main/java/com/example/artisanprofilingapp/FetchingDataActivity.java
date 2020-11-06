@@ -11,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class FetchingDataActivity extends AppCompatActivity {
     SharedPreferences myPref;
     private MediaPlayer mediaPlayer;
     private String idToGet="";
+    private String toUpdateFlag="";
 
     private WebView webView;
     @Override
@@ -30,7 +32,11 @@ public class FetchingDataActivity extends AppCompatActivity {
         finish = (Button) findViewById(R.id.finish);
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         idToGet = myPref.getString("id","No data found");
+        toUpdateFlag = myPref.getString("toUpdateFlag","No data found");
         webView = findViewById(R.id.webView);
+        WebSettings wbs = webView.getSettings();
+        wbs.setJavaScriptEnabled(true);
+        wbs.setMediaPlaybackRequiresUserGesture(false);
         webView.loadUrl("http://artisanapp.xyz/fetchingData.php?id="+idToGet);
 
 
@@ -43,8 +49,16 @@ public class FetchingDataActivity extends AppCompatActivity {
 //                ThankYouActivity.this.finish();
 //                System.exit(0);
                     //myPref.edit().putString("track","0").apply();
-                    Intent intent = new Intent(FetchingDataActivity.this, ThankYouActivity.class);
-                    startActivity(intent);
+                    if (toUpdateFlag=="1")
+                    {
+                        Intent intent = new Intent(FetchingDataActivity.this, UpdateSelectionAcivity.class);
+                        startActivity(intent);
+
+                    }
+                    else {
+                        Intent intent = new Intent(FetchingDataActivity.this, ThankYouActivity.class);
+                        startActivity(intent);
+                    }
                 }
             });
 
@@ -66,13 +80,11 @@ public class FetchingDataActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        mediaPlayer.stop();
         super.onBackPressed();
         myPref.edit().putString("track","0").apply();
     }
     @Override
     public void onUserLeaveHint(){
-        mediaPlayer.stop();
         super.onUserLeaveHint();
         myPref.edit().putString("track","0").apply();
     }

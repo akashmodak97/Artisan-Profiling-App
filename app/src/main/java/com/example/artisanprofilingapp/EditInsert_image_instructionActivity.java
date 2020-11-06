@@ -26,6 +26,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 public class EditInsert_image_instructionActivity extends AppCompatActivity {
     Button submitbtn;
     private static final int PERMISSION_REQUEST_CODE = 100;
@@ -73,6 +75,7 @@ submitbtn = findViewById(R.id.submitBtn);
                     img2.setImageResource(R.drawable.saree2);
                     img3.setImageResource(R.drawable.saree3);
                     img4.setVisibility(View.GONE);
+
                     sareemediaPlayer.start();
                     break;
                 case "kurta":
@@ -91,6 +94,7 @@ submitbtn = findViewById(R.id.submitBtn);
                     img2.setImageResource(R.drawable.kurta2);
                     img3.setImageResource(R.drawable.kurta3);
                     img4.setImageResource(R.drawable.kurta4);
+//                    kurtamediaPlayer.prepare();
                     kurtamediaPlayer.start();
                     break;
                 case "tshirt":
@@ -107,6 +111,7 @@ submitbtn = findViewById(R.id.submitBtn);
                     img2.setImageResource(R.drawable.tshirt2);
                     img3.setVisibility(View.GONE);
                     img4.setVisibility(View.GONE);
+//                    tshirtmediaPlayer.prepare();
                     tshirtmediaPlayer.start();
                     break;
                 case "showpiece":
@@ -122,6 +127,7 @@ submitbtn = findViewById(R.id.submitBtn);
                     img2.setImageResource(R.drawable.showpiece2);
                     img3.setImageResource(R.drawable.showpiece3);
                     img4.setImageResource(R.drawable.showpiece4);
+//                    showpiecemediaPlayer.prepare();
                     showpiecemediaPlayer.start();
                     break;
                 case "bag":
@@ -141,6 +147,7 @@ submitbtn = findViewById(R.id.submitBtn);
                     img2.setImageResource(R.drawable.bag2);
                     img3.setImageResource(R.drawable.bag3);
                     img4.setVisibility(View.GONE);
+//                    bagmediaPlayer.prepare();
                     bagmediaPlayer.start();
                     break;
                 case "goina":
@@ -156,6 +163,7 @@ submitbtn = findViewById(R.id.submitBtn);
                     img2.setImageResource(R.drawable.goina2);
                     img3.setImageResource(R.drawable.goina3);
                     img4.setVisibility(View.GONE);
+//                    goinamediaPlayer.prepare();
                     goinamediaPlayer.start();
                     break;
                 default:

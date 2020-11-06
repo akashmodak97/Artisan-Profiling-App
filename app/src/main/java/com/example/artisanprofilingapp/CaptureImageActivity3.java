@@ -69,6 +69,7 @@ public class CaptureImageActivity3 extends AppCompatActivity {
         idToGet = myPref.getString("id","No Data found");
         ImageCountToGet = myPref.getString("count","No data found");
         mediaPlayer = MediaPlayer.create(this, R.raw.captureimage3);
+
         mediaPlayer.start();
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();

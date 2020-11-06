@@ -15,7 +15,7 @@ import android.widget.Button;
 public class ThankYouActivity extends AppCompatActivity {
     Button finish,newentry;
     SharedPreferences myPref;
-    private MediaPlayer mediaPlayer;
+    //private MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +23,8 @@ public class ThankYouActivity extends AppCompatActivity {
         finish = (Button) findViewById(R.id.finish);
 //        newentry = (Button) findViewById(R.id.newEntry);
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
-        mediaPlayer = MediaPlayer.create(this, R.raw.thankyouinst);
-        mediaPlayer.start();
+        //mediaPlayer = MediaPlayer.create(this, R.raw.thankyouinst);
+        //mediaPlayer.start();
         myPref.edit().putString("track","19").apply();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();
@@ -35,7 +35,7 @@ public class ThankYouActivity extends AppCompatActivity {
 //                ThankYouActivity.this.finish();
 //                System.exit(0);
                     myPref.edit().putString("track","0").apply();
-                    mediaPlayer.stop();
+                    //mediaPlayer.stop();
                     finishAffinity();
                     System.exit(0);
                 }
@@ -59,13 +59,13 @@ public class ThankYouActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        mediaPlayer.stop();
+        //mediaPlayer.stop();
         super.onBackPressed();
         myPref.edit().putString("track","0").apply();
     }
     @Override
     public void onUserLeaveHint(){
-        mediaPlayer.stop();
+        //mediaPlayer.stop();
         super.onUserLeaveHint();
         myPref.edit().putString("track","0").apply();
     }

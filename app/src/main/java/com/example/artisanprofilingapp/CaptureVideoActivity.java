@@ -75,6 +75,7 @@ private String outputVideoPath="";
         dataToGet = myPref.getString("id","No data found");
         Log.d("hiii", "onCreate: "+dataToGet);
         mediaPlayer = MediaPlayer.create(this, R.raw.profilevideocaptureinst);
+
         mediaPlayer.start();
 
         // Creating Volley newRequestQueue .

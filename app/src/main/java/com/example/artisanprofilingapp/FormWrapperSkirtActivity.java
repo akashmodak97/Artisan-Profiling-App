@@ -24,6 +24,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+
 public class FormWrapperSkirtActivity extends AppCompatActivity {
 
     TextInputLayout codeno, productid, productname, material, length, pendentmeasurement, earringmeasurement,artworktype;
@@ -68,6 +70,7 @@ public class FormWrapperSkirtActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(FormWrapperSkirtActivity.this);
         progressDialog = new ProgressDialog(FormWrapperSkirtActivity.this);
         mediaPlayer = MediaPlayer.create(this, R.raw.forminst);
+
         mediaPlayer.start();
 
         skip.setOnClickListener(new View.OnClickListener() {

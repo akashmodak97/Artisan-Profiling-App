@@ -25,6 +25,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 public class Insert_image_instructionActivity extends AppCompatActivity {
     Button submitbtn;
     private static final int PERMISSION_REQUEST_CODE = 100;
@@ -72,6 +74,7 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                     img2.setImageResource(R.drawable.saree2);
                     img3.setImageResource(R.drawable.saree3);
                     img4.setVisibility(View.GONE);
+
                     sareemediaPlayer.start();
                     break;
                 case "kurta":
@@ -90,6 +93,7 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                     img2.setImageResource(R.drawable.kurta2);
                     img3.setImageResource(R.drawable.kurta3);
                     img4.setImageResource(R.drawable.kurta4);
+//                    kurtamediaPlayer.prepare();
                     kurtamediaPlayer.start();
                     break;
                 case "tshirt":
@@ -106,6 +110,7 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                     img2.setImageResource(R.drawable.tshirt2);
                     img3.setVisibility(View.GONE);
                     img4.setVisibility(View.GONE);
+//                    tshirtmediaPlayer.prepare();
                     tshirtmediaPlayer.start();
                     break;
                 case "showpiece":
@@ -121,6 +126,7 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                     img2.setImageResource(R.drawable.showpiece2);
                     img3.setImageResource(R.drawable.showpiece3);
                     img4.setImageResource(R.drawable.showpiece4);
+//                    showpiecemediaPlayer.prepare();
                     showpiecemediaPlayer.start();
                     break;
                 case "bag":
@@ -140,6 +146,7 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                     img2.setImageResource(R.drawable.bag2);
                     img3.setImageResource(R.drawable.bag3);
                     img4.setVisibility(View.GONE);
+//                    bagmediaPlayer.prepare();
                     bagmediaPlayer.start();
                     break;
                 case "goina":
@@ -155,6 +162,7 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                     img2.setImageResource(R.drawable.goina2);
                     img3.setImageResource(R.drawable.goina3);
                     img4.setVisibility(View.GONE);
+//                    goinamediaPlayer.prepare();
                     goinamediaPlayer.start();
                     break;
                 default:
@@ -189,12 +197,31 @@ public class Insert_image_instructionActivity extends AppCompatActivity {
                 NetworkInfo networkInfo = con.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
                     myPref.edit().putString("track", "10").apply();
-                    sareemediaPlayer.stop();
-                    tshirtmediaPlayer.stop();
-                    bagmediaPlayer.stop();
-                    goinamediaPlayer.stop();
-                    showpiecemediaPlayer.stop();
-                    kurtamediaPlayer.stop();
+                    if(sareemediaPlayer.isPlaying()) {
+                        sareemediaPlayer.stop();
+                    }
+                    else if(tshirtmediaPlayer.isPlaying()) {
+                        tshirtmediaPlayer.stop();
+                    }
+                    else if(bagmediaPlayer.isPlaying()) {
+                        bagmediaPlayer.stop();
+                    }
+                    else if(goinamediaPlayer.isPlaying()) {
+                        goinamediaPlayer.stop();
+                    }
+                    else if(showpiecemediaPlayer.isPlaying()) {
+                        showpiecemediaPlayer.stop();
+                    }
+                    else if(kurtamediaPlayer.isPlaying()) {
+                        kurtamediaPlayer.stop();
+                    }
+//
+//
+//                    tshirtmediaPlayer.stop();
+//                    bagmediaPlayer.stop();
+//                    goinamediaPlayer.stop();
+//                    showpiecemediaPlayer.stop();
+//                    kurtamediaPlayer.stop();
 
                     Intent i = new Intent(Insert_image_instructionActivity.this, CaptureImageActivity.class);
                     startActivity(i);

@@ -17,6 +17,8 @@ import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+
 public class AgeActivity extends AppCompatActivity {
     TextInputLayout age;
     EditText nam;//to show error msg
@@ -35,6 +37,7 @@ public class AgeActivity extends AppCompatActivity {
         nam = (EditText)findViewById(R.id.nam);//to show error msg
         submitbtn = (Button)findViewById(R.id.submitBtn);
         mediaPlayer = MediaPlayer.create(this, R.raw.ageinst);
+
         mediaPlayer.start();
 
         //Initialize of SharedPref

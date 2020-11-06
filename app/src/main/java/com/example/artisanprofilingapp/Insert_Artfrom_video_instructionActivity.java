@@ -21,6 +21,7 @@ import android.widget.VideoView;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Insert_Artfrom_video_instructionActivity extends AppCompatActivity {
@@ -44,6 +45,7 @@ public class Insert_Artfrom_video_instructionActivity extends AppCompatActivity 
         submitbtn = (Button)findViewById(R.id.submitBtn);
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.productvideoinst);
+
         mediaPlayer.start();
         yt = findViewById(R.id.youtube_player_view);
         ll = findViewById(R.id.youtubeLayout);

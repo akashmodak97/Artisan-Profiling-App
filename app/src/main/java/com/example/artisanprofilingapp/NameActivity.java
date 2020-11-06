@@ -25,6 +25,8 @@ import com.android.volley.toolbox.Volley;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+
 public class NameActivity extends AppCompatActivity {
     TextInputLayout name;
     EditText nam;//to show error msg
@@ -45,6 +47,7 @@ public class NameActivity extends AppCompatActivity {
         nam = (EditText)findViewById(R.id.nam);//to show error msg
         submitbtn = (Button)findViewById(R.id.submitBtn);
         mediaPlayer = MediaPlayer.create(this, R.raw.nameinst);
+
         mediaPlayer.start();
 
         //Initialize of SharedPref

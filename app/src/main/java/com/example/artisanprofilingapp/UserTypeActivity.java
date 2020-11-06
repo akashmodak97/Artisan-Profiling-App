@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class UserTypeActivity extends AppCompatActivity {
     private Button register, update;
     SharedPreferences myPref;
@@ -20,6 +22,8 @@ public class UserTypeActivity extends AppCompatActivity {
         register = findViewById(R.id.register);
         update = findViewById(R.id.update);
         mediaPlayer = MediaPlayer.create(this, R.raw.newdataorupdate);
+
+
         mediaPlayer.start();
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         register.setOnClickListener(new View.OnClickListener() {

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class InternetCheckActivity extends AppCompatActivity {
     Button finish,newentry,done;
     private MediaPlayer mediaPlayer;
@@ -22,6 +24,7 @@ public class InternetCheckActivity extends AppCompatActivity {
         setContentView(R.layout.activity_internet_check);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.nointernetinst);
+
         mediaPlayer.start();
 
         finish = (Button) findViewById(R.id.finish);

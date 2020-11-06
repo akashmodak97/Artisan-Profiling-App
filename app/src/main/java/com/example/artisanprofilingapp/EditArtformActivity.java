@@ -30,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -55,6 +56,7 @@ public class EditArtformActivity extends AppCompatActivity implements AdapterVie
         nam = (EditText)findViewById(R.id.nam);//to show error msg
         submitbtn = (Button)findViewById(R.id.submitBtn);
         mediaPlayer = MediaPlayer.create(this, R.raw.artforminst);
+
         mediaPlayer.start();
 
         //Initialize of SharedPref

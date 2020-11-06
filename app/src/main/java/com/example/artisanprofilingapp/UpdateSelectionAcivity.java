@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class UpdateSelectionAcivity extends AppCompatActivity {
     Button phoneno, name, age, address, profilePic, artformPicture,experience, silpo, porichitiVideo,artformVideo,newData;
     private SharedPreferences myPref;
@@ -36,6 +38,7 @@ public class UpdateSelectionAcivity extends AppCompatActivity {
 
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.whichdatachange);
+
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();
@@ -144,7 +147,8 @@ public class UpdateSelectionAcivity extends AppCompatActivity {
 //                    myPref.edit().putString("selected", "saree").apply();
 //                    myPref.edit().putString("track", "9").apply();
                     mediaPlayer.stop();
-                    startActivity(new Intent(UpdateSelectionAcivity.this, EditImageCaptureActivity.class));
+                    myPref.edit().putString("update","1").apply();
+                    startActivity(new Intent(UpdateSelectionAcivity.this, ImageCaptureSelection.class));
                 }
             });
 

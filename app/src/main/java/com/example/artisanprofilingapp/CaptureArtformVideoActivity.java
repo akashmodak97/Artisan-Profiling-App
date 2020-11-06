@@ -35,6 +35,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,6 +61,7 @@ public class CaptureArtformVideoActivity extends AppCompatActivity {
         dataToGet = myPref.getString("id","No data found");
         Log.d("hiiii artform", "onCreate: "+dataToGet);
         mediaPlayer = MediaPlayer.create(this, R.raw.productvideocaptureinst);
+
         mediaPlayer.start();
 //        displayRecordedVideo = (VideoView)findViewById(R.id.artformvideodisplay);
 

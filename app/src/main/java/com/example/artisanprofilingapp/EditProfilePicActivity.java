@@ -73,6 +73,7 @@ public class EditProfilePicActivity extends AppCompatActivity {
         idToGet = myPref.getString("id","No data found");
         ImageCountToGet = myPref.getString("count","No data found");
         mediaPlayer = MediaPlayer.create(this, R.raw.profilepicinst);
+
         mediaPlayer.start();
 
         String state = Environment.getExternalStorageState();

@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class ImageCaptureSelection extends AppCompatActivity {
     Button saree, kurtya, tshirt, showpiece, bag, goina, other;
     private SharedPreferences myPref;
@@ -30,6 +32,7 @@ public class ImageCaptureSelection extends AppCompatActivity {
         other = findViewById(R.id.others);
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.captureselectioninst);
+
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();

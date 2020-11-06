@@ -18,6 +18,8 @@ import android.widget.EditText;
 import com.android.volley.RequestQueue;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+
 public class EditArtformActivity2 extends AppCompatActivity {
     TextInputLayout artlearned;
     EditText nam;//to show error msg
@@ -36,6 +38,7 @@ public class EditArtformActivity2 extends AppCompatActivity {
         nam = (EditText)findViewById(R.id.nam);//to show error msg
         submitbtn = (Button)findViewById(R.id.submitBtn);
         mediaPlayer = MediaPlayer.create(this, R.raw.artform2inst);
+
         mediaPlayer.start();
 
         //Initialize of SharedPref

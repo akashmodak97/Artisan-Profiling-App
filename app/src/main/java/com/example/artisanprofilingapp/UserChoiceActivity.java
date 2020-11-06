@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class UserChoiceActivity extends AppCompatActivity {
 
     Button yes,no;
@@ -26,6 +28,8 @@ public class UserChoiceActivity extends AppCompatActivity {
         no = (Button) findViewById(R.id.noBtn);
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.userchoiceforclickingmorepictures);
+
+
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();
@@ -45,8 +49,15 @@ public class UserChoiceActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     myPref.edit().putString("track", "18").apply();
                     mediaPlayer.stop();
-                    Intent i = new Intent(UserChoiceActivity.this, FetchingDataActivity.class);
-                    startActivity(i);
+                    String update = myPref.getString("update","0");
+                    if(update == "0") {
+                        Intent i = new Intent(UserChoiceActivity.this, FetchingDataActivity.class);
+                        startActivity(i);
+                    }
+                    else{
+                        Intent i = new Intent(UserChoiceActivity.this, UpdateSelectionAcivity.class);
+                        startActivity(i);
+                    }
                 }
             });
         }

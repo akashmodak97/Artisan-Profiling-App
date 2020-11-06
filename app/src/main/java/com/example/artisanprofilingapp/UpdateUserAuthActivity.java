@@ -39,6 +39,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -65,6 +66,7 @@ public class UpdateUserAuthActivity extends AppCompatActivity {
         ph = (EditText)findViewById(R.id.ph);
         submitbtn = (Button)findViewById(R.id.submitBtn);
         mediaPlayer = MediaPlayer.create(this, R.raw.nameandphoneinst);
+
         mediaPlayer.start();
 
         String state = Environment.getExternalStorageState();
@@ -204,7 +206,8 @@ public class UpdateUserAuthActivity extends AppCompatActivity {
             rowcount = jo.getString(Config.ROW_COUNT);
             Log.d("json e rowcount",jo.getString(Config.ROW_COUNT));
             if (rowcount.equals("1")) {
-                startActivity(new Intent(UpdateUserAuthActivity.this, UpdateSelectionAcivity.class));
+                myPref.edit().putString("toUpdateFlag","1").apply();
+                startActivity(new Intent(UpdateUserAuthActivity.this, FetchingDataActivity.class));
             }
             else{
                 startActivity(new Intent(UpdateUserAuthActivity.this, UpdateUserAuthActivity.class));

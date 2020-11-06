@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class EditImageCaptureActivity extends AppCompatActivity {
     Button saree, kurtya, tshirt, showpiece, bag, goina, other;
     private SharedPreferences myPref;
@@ -30,6 +32,7 @@ public class EditImageCaptureActivity extends AppCompatActivity {
         other = findViewById(R.id.others);
         myPref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(this, R.raw.captureselectioninst);
+
         mediaPlayer.start();
         ConnectivityManager con = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = con.getActiveNetworkInfo();
@@ -95,7 +98,7 @@ public class EditImageCaptureActivity extends AppCompatActivity {
                     myPref.edit().putString("selected", "other").apply();
                     //myPref.edit().putString("track", "9").apply();//kora hoini.. pore korbo
                     mediaPlayer.stop();
-                    startActivity(new Intent(getApplicationContext(), EditImageCaptureActivity.class));
+                    startActivity(new Intent(getApplicationContext(), EditCaptureImageActivity.class));
                 }
             });
 

@@ -24,6 +24,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+
 public class FormBagActivity extends AppCompatActivity {
     TextInputLayout codeno, productid, productname, material, length, pendentmeasurement, earringmeasurement,artworktype;
     EditText nam1, nam2, nam3,nam4, nam5, nam6;//to show error msg
@@ -68,6 +70,7 @@ public class FormBagActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(FormBagActivity.this);
         progressDialog = new ProgressDialog(FormBagActivity.this);
         mediaPlayer = MediaPlayer.create(this, R.raw.forminst);
+
         mediaPlayer.start();
 
         skip.setOnClickListener(new View.OnClickListener() {

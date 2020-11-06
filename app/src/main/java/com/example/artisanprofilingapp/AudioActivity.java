@@ -60,15 +60,14 @@ public class AudioActivity extends AppCompatActivity {
         dataToGet = myPref.getString("id","No data found");
         Log.d("hiii", "onCreate: "+dataToGet);
         mediaPlayer = MediaPlayer.create(this, R.raw.audioinst);
+
         mediaPlayer.start();
 
-        // Creating Volley newRequestQueue .
         requestQueue = Volley.newRequestQueue(AudioActivity.this);
         progressDialog = new ProgressDialog(AudioActivity.this);
 
         buttonStop.setEnabled(false);
         buttonPlayLastRecordAudio.setEnabled(false);
-//        buttonStopPlayingRecording.setEnabled(false);
 
         random = new Random();
 
@@ -122,14 +121,9 @@ public class AudioActivity extends AppCompatActivity {
                 buttonStop.setEnabled(false);
                 buttonPlayLastRecordAudio.setEnabled(true);
                 buttonStart.setEnabled(true);
-  //              buttonStopPlayingRecording.setEnabled(false);
 
                 Toast.makeText(AudioActivity.this, "Recording Completed",
                         Toast.LENGTH_LONG).show();
-//                uri = intent.getData();
-//                file = new File(getRealPathFromURI(uri));
-//                Log.d("hmm", file.toString());
-//                uploadVideo();
             }
         });
 
@@ -145,7 +139,7 @@ public class AudioActivity extends AppCompatActivity {
                     fileName = AudioSavePathInDevice;
                     uploadAudio();
                     mediaPlayer.setDataSource(AudioSavePathInDevice);
-                    mediaPlayer.prepare();
+//                    mediaPlayer.prepare();
                     Log.d("hmm",AudioSavePathInDevice);
                 } catch (IOException e) {
                     e.printStackTrace();

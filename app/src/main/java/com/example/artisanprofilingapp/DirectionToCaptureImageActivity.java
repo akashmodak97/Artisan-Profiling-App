@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import java.io.IOException;
+
 public class DirectionToCaptureImageActivity extends AppCompatActivity {
     private Button nextBtn;
     private MediaPlayer mediaPlayer;
@@ -19,6 +21,7 @@ public class DirectionToCaptureImageActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         nextBtn = findViewById(R.id.nextBtn);
         mediaPlayer = MediaPlayer.create(this, R.raw.directiontocaptureimage);
+
         mediaPlayer.start();
         //At the end
         nextBtn.setOnClickListener(new View.OnClickListener() {

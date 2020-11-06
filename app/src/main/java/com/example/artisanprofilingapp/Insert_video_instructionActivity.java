@@ -20,6 +20,7 @@ import android.net.Uri;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 
@@ -42,6 +43,7 @@ private MediaPlayer mediaPlayer, mediaPlayer2;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_insert_video_instruction);
         mediaPlayer = MediaPlayer.create(this, R.raw.profilevideoinst);
+
         mediaPlayer.start();
 //
 //        mediaPlayer2 = MediaPlayer.create(this, R.raw.bikasdas);
