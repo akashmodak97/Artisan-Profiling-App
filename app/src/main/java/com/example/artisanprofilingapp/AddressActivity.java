@@ -167,11 +167,13 @@ public class AddressActivity extends AppCompatActivity {
                 idToGet = idToGet.replaceAll(characterFilter,"");
                 AddressExpHolder = AddressExpHolder.replaceAll(characterFilter,"");
                 ageToGet = ageToGet.replaceAll(characterFilter,"");
+                String caste = myPref.getString("caste","No data found");
+                String gender = myPref.getString("gender","No data found");
 
 
                 String myurl = "https://artisanapp.xyz/name_address.php?name=" + nameToGet + "&district=" + AddressHolder1 +"&addressLine1="+ AddressHolder2
                         +"&addressLine2="+ AddressHolder3 +"&pinCode="+ AddressHolder4 +"&landMark="+ AddressHolder5
-                        +"&id="+ idToGet+ "&addressExp="+ AddressExpHolder + "&age="+ ageToGet;
+                        +"&id="+ idToGet+ "&addressExp="+ AddressExpHolder + "&age="+ ageToGet + "&caste="+ caste + "&gender=" +gender;
 
 
 

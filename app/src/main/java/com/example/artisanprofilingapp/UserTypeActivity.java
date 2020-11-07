@@ -23,7 +23,6 @@ public class UserTypeActivity extends AppCompatActivity {
         update = findViewById(R.id.update);
         mediaPlayer = MediaPlayer.create(this, R.raw.newdataorupdate);
 
-
         mediaPlayer.start();
         myPref = getApplicationContext().getSharedPreferences("MyPref",MODE_PRIVATE);
         register.setOnClickListener(new View.OnClickListener() {

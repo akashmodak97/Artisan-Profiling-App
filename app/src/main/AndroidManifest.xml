@@ -21,13 +21,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditCaptureImageActivity4"
+        <activity android:name=".NCoReIntoActivity"></activity>
+        <activity
+            android:name=".EditCaptureImageActivity4"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".EditCaptureImageActivity3"
+        <activity
+            android:name=".EditCaptureImageActivity3"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".EditCaptureImageActivity2"
+        <activity
+            android:name=".EditCaptureImageActivity2"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

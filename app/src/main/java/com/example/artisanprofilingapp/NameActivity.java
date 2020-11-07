@@ -15,6 +15,8 @@ import android.widget.EditText;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -33,9 +35,11 @@ public class NameActivity extends AppCompatActivity {
     Button submitbtn;
     RequestQueue requestQueue;
     ProgressDialog progressDialog;
-    String NameHolder;
+    String NameHolder,st,sc,gen,obc;
     SharedPreferences myPref;
     private MediaPlayer mediaPlayer;
+    RadioButton yes, no;
+    RadioGroup radioGroup1, radioGroup2;
 
 
     @Override
@@ -56,6 +60,54 @@ public class NameActivity extends AppCompatActivity {
         // Creating Volley newRequestQueue .
         requestQueue = Volley.newRequestQueue(NameActivity.this);
         progressDialog = new ProgressDialog(NameActivity.this);
+
+        radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup1);
+        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.gen:
+                        gen = "gen";
+                        myPref.edit().putString("caste", "gen").apply();
+                        break;
+                    case R.id.sc:
+                        sc = "sc";
+                        myPref.edit().putString("caste", "sc").apply();
+                        break;
+                    case R.id.st:
+                        st = "st";
+                        myPref.edit().putString("caste", "st").apply();
+                        break;
+                    case R.id.obc:
+                        obc = "obc";
+                        myPref.edit().putString("caste", "obc").apply();
+                }
+            }
+            });
+
+        radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup2);
+        radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.male:
+//                        gen = "gen";
+                        myPref.edit().putString("gender", "male").apply();
+                        break;
+                    case R.id.female:
+//                        sc = "sc";
+                        myPref.edit().putString("gender", "female").apply();
+                        break;
+                    case R.id.others:
+//                        st = "st";
+                        myPref.edit().putString("gender", "others").apply();
+                        break;
+//                    case R.id.obc:
+//                        obc = "obc";
+//                        myPref.edit().putString("caste", "obc").apply();
+                }
+            }
+        });
 
         submitbtn.setOnClickListener(new View.OnClickListener(){
             @Override

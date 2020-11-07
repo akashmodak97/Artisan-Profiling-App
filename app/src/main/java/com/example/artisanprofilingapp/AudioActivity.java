@@ -20,10 +20,12 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +35,8 @@ import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class AudioActivity extends AppCompatActivity {
+    TextInputLayout name;
+    EditText nam;//to show error msg
     Button buttonStart, buttonStop, buttonPlayLastRecordAudio ;
     String AudioSavePathInDevice = null;
     MediaRecorder mediaRecorder ;
@@ -46,11 +50,14 @@ public class AudioActivity extends AppCompatActivity {
 //    private File file;
   //  private Uri file_uri, uri;
     private String dataToGet;
-    String fileName="";
+    String fileName="", PriceHolder="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio);
+
+        name = (TextInputLayout)findViewById(R.id.name);
+        nam = (EditText)findViewById(R.id.nam);//to show error msg
 
         buttonStart = (Button) findViewById(R.id.button1);
         buttonStop = (Button) findViewById(R.id.button2);
@@ -137,6 +144,12 @@ public class AudioActivity extends AppCompatActivity {
                 mediaPlayer = new MediaPlayer();
                 try {
                     fileName = AudioSavePathInDevice;
+                    if (!nam.getText().toString().equals("")) {
+                        PriceHolder = name.getEditText().getText().toString().trim();
+                        Log.d("hmm Priczz", PriceHolder);
+                    } else {
+                        nam.setError("আপনার প্রোডাক্টের দাম বলুন");
+                    }
                     uploadAudio();
                     mediaPlayer.setDataSource(AudioSavePathInDevice);
 //                    mediaPlayer.prepare();
@@ -145,10 +158,12 @@ public class AudioActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 //mediaPlayer.start();
-                Toast.makeText(AudioActivity.this, "Recording Playing",
-                        Toast.LENGTH_LONG).show();
+//                Toast.makeText(AudioActivity.this, "Recording Playing",
+//                        Toast.LENGTH_LONG).show();
             }
         });
+
+
 
 //        buttonStopPlayingRecording.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -194,7 +209,7 @@ public class AudioActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... params) {
                 AudioUpload u = new AudioUpload();
-                String msg = u.upLoad2Server(fileName,dataToGet);
+                String msg = u.upLoad2Server(fileName,dataToGet+"*"+PriceHolder);
                 Log.d("hmm msg-->" ,msg);
                 return msg;
 

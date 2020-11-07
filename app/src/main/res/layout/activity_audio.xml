@@ -29,12 +29,12 @@
             />
 
         <TextView
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="80dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="এইবার আপনার পণ্যটির সমন্ধে কিছু বলুন|\nপণ্যটি কি ম্যাটেরিয়ালে বানানো?
+            android:text="এইবার আপনার পণ্যটির সমন্ধে কিছু বলুন|\n পণ্যটি কি ম্যাটেরিয়ালে বানানো?
 পণ্যটি দাম কত? প্রভৃতি..."
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_gravity="center"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
@@ -45,16 +45,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
             android:text="নিচে রেকর্ড বাটন টিপুন আপনার অডিও রেকর্ড করার  জন্য"
             android:textColor="@color/textColor"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -87,6 +87,43 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="আপনার প্রোডাক্টের দাম বলুন"
+            android:textSize="25sp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/textColor"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="0dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
+
+            <EditText
+                android:id="@+id/nam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="প্রোডাক্টের দাম"
+                android:maxLength="100"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
@@ -97,6 +134,6 @@
             android:textSize="30sp"
             android:padding="10dp"
             android:background="@drawable/btn_round"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 </ScrollView>

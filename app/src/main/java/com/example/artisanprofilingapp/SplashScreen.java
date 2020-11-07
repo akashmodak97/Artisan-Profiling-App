@@ -38,6 +38,7 @@ public class SplashScreen extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
+//                    startActivity(new Intent(SplashScreen.this, NCoReIntoActivity.class));
 //        if (flag.equals("-1"))
 //        {
 //            i=new Intent(SplashScreen.this,InternetCheckActivity.class);
@@ -48,7 +49,7 @@ public class SplashScreen extends AppCompatActivity {
                     if (s != null)
                         switch (s) {
                             case "0":
-                                startActivity(new Intent(SplashScreen.this, UserTypeActivity.class));
+                                startActivity(new Intent(SplashScreen.this, NCoReIntoActivity.class));
 //                                startActivity(new Intent(SplashScreen.this, FetchingDataActivity.class));
                                 break;
 //                            case "1":
